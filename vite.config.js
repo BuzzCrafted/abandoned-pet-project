@@ -3,13 +3,10 @@ import tailwindcss from '@tailwindcss/vite';
 import laravel from 'laravel-vite-plugin'
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
-// Set APP_URL if it doesn't exist for Laravel Vite plugin
-if (! process.env.APP_URL) {
-  process.env.APP_URL = 'http://example.test';
-}
+const appUrl = process.env.APP_URL ?? 'https://abandonedpetproject.test';
 
 export default defineConfig({
-  base: '/app/themes/sage/public/build/',
+  base: '',
   plugins: [
     tailwindcss(),
     laravel({
@@ -21,6 +18,8 @@ export default defineConfig({
       ],
       refresh: true,
       assets: ['resources/images/**', 'resources/fonts/**'],
+      // Use Valet TLS certs so the dev server matches the HTTPS WordPress site.
+      detectTls: 'abandonedpetproject.test',
     }),
 
     wordpressPlugin(),
@@ -40,6 +39,11 @@ export default defineConfig({
       '@styles': '/resources/css',
       '@fonts': '/resources/fonts',
       '@images': '/resources/images',
+    },
+  },
+  server: {
+    cors: {
+      origin: appUrl,
     },
   },
 })

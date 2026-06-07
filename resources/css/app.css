@@ -2,3 +2,23 @@
 @source "../../app/**/*.php";
 @source "../**/*.blade.php";
 @source "../**/*.js";
+
+@theme {
+  /*
+    Semantic aliases over Tailwind's built-in color scale.
+    To retheme: change the var() reference here — components never need touching.
+
+    bg-primary  text-primary  border-primary
+    bg-accent   text-accent   border-accent
+    bg-dark     text-dark
+    bg-soft     text-soft
+  */
+  --color-primary: var(--color-teal-700);   /* nav bar, logo, CTA hover        */
+  --color-accent:  var(--color-orange-700); /* links, buttons, active, borders */
+  --color-dark:    var(--color-slate-700);  /* body copy, headings, footer bg  */
+  --color-soft:    var(--color-sky-200);    /* section panels, gradient        */
+  --color-inverse: var(--color-white);      /* text / icons on brand backgrounds */
+}
+
+/* Named groups are built dynamically in PHP — force Tailwind to include them */
+@source inline("group/{nav,sub,leaf} group-hover/{nav,sub,leaf}:block group-focus-within/{nav,sub,leaf}:block");
