@@ -10,7 +10,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body @php(body_class())>
+<body @php(body_class('font-main text-base text-secondary bg-inverse'))>
     @php(wp_body_open())
 
     <div id="app">

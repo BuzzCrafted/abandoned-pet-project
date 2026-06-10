@@ -40,8 +40,11 @@
   },
   "require": {
     "php": ">=8.3",
+    "blade-ui-kit/blade-heroicons": "^2.7",
+    "blade-ui-kit/blade-icons": "^1.10",
     "log1x/navi": "^3.1",
-    "roots/acorn": "^6.0"
+    "roots/acorn": "^6.0",
+    "roots/acorn-post-types": "^1.0"
   },
   "require-dev": {
     "laravel/pint": "^1.20"

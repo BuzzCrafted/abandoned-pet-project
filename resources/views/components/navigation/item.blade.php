@@ -30,32 +30,31 @@
             $dropdownVis = '';
         }
 
-        $dropdownPos = $depth === 0 ? 'left-0 top-full border-t-4 border-t-accent' : 'left-full top-0';
+        $dropdownPos = $depth === 0 ? 'left-0 top-14 border-t-4 border-t-accent' : 'left-full top-0';
     @endphp
 
     <li class="{{ $liGroup }}">
         <a href="{{ $item->url }}" @if ($item->target) target="{{ $item->target }}" @endif
             @class([
-                'flex items-center uppercase text-sm font-semibold tracking-wide px-5 py-5 transition-colors hover:bg-accent focus:bg-accent focus:outline-none' => $isTopLevel,
+                'flex items-center uppercase text-sm font-semibold tracking-wide px-5 py-5 transition-colors hover:bg-primary focus:bg-primary focus:outline-none' => $isTopLevel,
                 'text-inverse' => $isTopLevel && !$item->active,
-                'bg-accent text-inverse' => $isTopLevel && $item->active,
-                'block w-full px-4 py-3 text-accent bg-white text-xs font-bold hover:bg-accent hover:text-inverse transition-colors' =>
+                'text-primary hover:text-inverse uppercase' => $isTopLevel && $item->active,
+                'inline-flex w-full justify-between uppercase bg-inverse px-4 py-3 text-xs font-bold text-primary transition-colors hover:text-accent' =>
                     !$isTopLevel && !$item->active,
-                'block w-full px-4 py-3 text-xs font-bold bg-accent text-inverse' =>
+                'inline-flex w-full px-4 py-3 text-xs uppercase font-bold bg-primary text-inverse' =>
                     !$isTopLevel && $item->active,
             ])>
             {{ $item->label }}
             @if ($hasChildren && $isTopLevel)
-                <svg class="ml-1 h-3 w-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-                </svg>
+                <x-heroicon-s-chevron-down class='ml-1 h-4 w-4 shrink-0' />
+            @elseif ($hasChildren)
+                <x-heroicon-s-chevron-right class='ml-1 h-4 w-4 shrink-0' />
             @endif
         </a>
 
         @if ($hasChildren)
             <ul
-                class="absolute z-50 hidden min-w-[215px] border border-accent bg-white shadow-md {{ $dropdownVis }} {{ $dropdownPos }}">
+                class="absolute z-50 hidden min-w-53.75  border-t-primary bg-inverse shadow-md {{ $dropdownVis }} {{ $dropdownPos }}">
                 @foreach ($item->children as $child)
                     <x-navigation.item :item="$child" :depth="$depth + 1" variant="desktop" />
                 @endforeach
@@ -70,17 +69,15 @@
                 <button type="button" @click="open = !open" :aria-expanded="open" @class([
                     'flex w-full items-center justify-between px-4 py-3 text-left font-semibold uppercase tracking-wide transition-colors hover:bg-accent' => true,
                     'text-sm text-inverse' => $depth === 0,
-                    'text-xs text-accent bg-white hover:text-inverse pl-6' => $depth > 0,
+                    'text-xs text-primary bg-inverse hover:text-accent pl-6' => $depth > 0,
                 ])>
                     <span>{{ $item->label }}</span>
-                    <svg class="h-4 w-4 shrink-0 transition-transform duration-200" :class="{ 'rotate-180': open }"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-                    </svg>
+                    <x-heroicon-s-chevron-down class='h-4 w-4 shrink-0 transition-transform duration-200'
+                        x-bind:class="{ 'rotate-180': open }" />
                 </button>
                 <ul x-show="open" x-collapse @class([
-                    'border-t border-white/10 bg-white' => $depth === 0,
-                    'border-t border-accent/20 bg-white/95' => $depth > 0,
+                    'border-t border-soft/10 bg-inverse' => $depth === 0,
+                    'border-t border-primary/20 bg-inverse/95' => $depth > 0,
                 ])>
                     @foreach ($item->children as $child)
                         <x-navigation.item :item="$child" :depth="$depth + 1" variant="mobile" />
@@ -90,15 +87,15 @@
         @else
             <a href="{{ $item->url }}" @if ($item->target) target="{{ $item->target }}" @endif
                 @class([
-                    'block px-4 py-3 font-semibold uppercase tracking-wide transition-colors hover:bg-accent' => true,
+                    'block px-4 py-3 font-semibold uppercase tracking-wide transition-colors hover:bg-primary' => true,
                     'text-sm text-inverse hover:text-inverse' => $depth === 0 && !$item->active,
-                    'text-sm bg-accent text-inverse' => $depth === 0 && $item->active,
-                    'text-xs text-accent hover:text-inverse pl-6' =>
+                    'text-sm bg-primary text-inverse' => $depth === 0 && $item->active,
+                    'text-xs text-primary hover:text-inverse pl-6' =>
                         $depth === 1 && !$item->active,
-                    'text-xs bg-accent text-inverse pl-6' => $depth === 1 && $item->active,
-                    'text-xs text-accent/80 hover:text-inverse pl-10' =>
+                    'text-xs bg-primary text-inverse pl-6' => $depth === 1 && $item->active,
+                    'text-xs text-primary/80 hover:text-inverse pl-10' =>
                         $depth > 1 && !$item->active,
-                    'text-xs bg-accent text-inverse pl-10' => $depth > 1 && $item->active,
+                    'text-xs bg-primary text-inverse pl-10' => $depth > 1 && $item->active,
                 ])>
                 {{ $item->label }}
             </a>
