@@ -15,12 +15,12 @@
 
     <div id="app">
         <a class="sr-only focus:not-sr-only" href="#main">
-            {{ __('Skip to content', 'sage') }}
+            {{ __('Skip to content', 'abandoned-pet-project') }}
         </a>
 
         @include('sections.header')
 
-        <main id="main" class="main">
+        <main id="main" class="main max-w-6xl mx-auto p-5">
             @yield('content')
         </main>
 

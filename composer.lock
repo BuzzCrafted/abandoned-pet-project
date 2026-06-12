@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "835746cde3fbde81fd13d0bcd240c216",
+    "content-hash": "f5ead80e43ce65a363296a1f914c5e93",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -215,6 +215,64 @@
                 }
             ],
             "time": "2026-02-10T14:33:43+00:00"
+        },
+        {
+            "name": "buzzcrafted/acorn-post-meta",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BuzzCrafted/acorn-post-meta.git",
+                "reference": "d1ae877cf8da20fd5a919970ad50cef13c1233cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BuzzCrafted/acorn-post-meta/zipball/d1ae877cf8da20fd5a919970ad50cef13c1233cd",
+                "reference": "d1ae877cf8da20fd5a919970ad50cef13c1233cd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.13",
+                "roots/acorn": "^4.0"
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "BuzzCrafted\\AcornPostMeta\\AcornPostMetaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BuzzCrafted\\AcornPostMeta\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BuzzCrafted",
+                    "email": "dev@buzzdeveloper.net"
+                }
+            ],
+            "description": "Simple post meta for Acorn.",
+            "homepage": "https://github.com/BuzzCrafted/acorn-post-meta",
+            "keywords": [
+                "acorn",
+                "post-meta",
+                "roots",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/BuzzCrafted/acorn-post-meta/issues",
+                "source": "https://github.com/BuzzCrafted/acorn-post-meta"
+            },
+            "time": "2025-10-03T10:11:17+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -3558,6 +3616,68 @@
             "time": "2026-02-21T00:32:22+00:00"
         },
         {
+            "name": "log1x/poet",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Log1x/poet.git",
+                "reference": "537649337e6a628991cf10effde1d9e34fbe3a27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Log1x/poet/zipball/537649337e6a628991cf10effde1d9e34fbe3a27",
+                "reference": "537649337e6a628991cf10effde1d9e34fbe3a27",
+                "shasum": ""
+            },
+            "require": {
+                "johnbillion/extended-cpts": "^5.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Log1x\\Poet\\PoetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Log1x\\Poet\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me"
+                }
+            ],
+            "description": "Configuration-based post type, taxonomy, editor color palette, block category, and block registration for Sage 10.",
+            "keywords": [
+                "cpt",
+                "gutenberg",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/log1x/poet/issues",
+                "source": "https://github.com/Log1x/poet/tree/v2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Log1x",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-05T23:34:45+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "3.10.0",
             "source": {
@@ -4648,64 +4768,6 @@
                 }
             ],
             "time": "2026-06-01T23:42:32+00:00"
-        },
-        {
-            "name": "roots/acorn-post-types",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roots/acorn-post-types.git",
-                "reference": "79ee2b9ec6357eef3cb4b81dfb00b3a515b0869a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roots/acorn-post-types/zipball/79ee2b9ec6357eef3cb4b81dfb00b3a515b0869a",
-                "reference": "79ee2b9ec6357eef3cb4b81dfb00b3a515b0869a",
-                "shasum": ""
-            },
-            "require": {
-                "johnbillion/extended-cpts": "^5.0",
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.13",
-                "roots/acorn": "^4.0"
-            },
-            "type": "package",
-            "extra": {
-                "acorn": {
-                    "providers": [
-                        "Roots\\AcornPostTypes\\AcornPostTypesServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Roots\\AcornPostTypes\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roots",
-                    "email": "team@roots.io"
-                }
-            ],
-            "description": "Simple post types and taxonomies using Extended CPTs for Acorn.",
-            "support": {
-                "issues": "https://github.com/roots/acorn-post-types/issues",
-                "source": "https://github.com/roots/acorn-post-types/tree/v1.0.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                }
-            ],
-            "time": "2025-06-01T21:17:10+00:00"
         },
         {
             "name": "roots/support",

@@ -19,8 +19,8 @@
 
 
     <div class="bg-surface transition-shadow duration-200 flex justify-center items-center mx-auto">
-        <div class="flex items-center gap-x-6 max-w-7xl">
-            <div class="mx-auto flex items-center justify-between  px-4 lg:justify-start lg:px-0">
+        <div class="flex px-4 md:px-0 items-center justify-between gap-x-6 max-w-7xl w-full">
+            <div class="md:mx-auto flex items-center justify-between px-4 lg:justify-start lg:px-0">
 
                 {{-- Desktop navigation (hidden on mobile) --}}
                 @if (has_nav_menu('primary_navigation'))
@@ -41,17 +41,19 @@
                     <x-heroicon-s-x-mark x-show="mobileOpen" x-cloak class="h-6 w-6" />
                 </button>
             </div>
-            <x-search />
-            <a href="{{ home_url('/donate-here') }}" class="relative w-16">
-                <x-heroicon-s-shopping-bag
-                    class="h-auto w-full border-inverse border-l-2 border-r-2 text-inverse bg-primary p-4" />
-            </a>
+            <div class="flex items-center gap-x-4">
+                <x-search />
+                <a href="{{ home_url('/donate-here') }}" class="relative w-16">
+                    <x-heroicon-s-shopping-bag
+                        class="h-auto w-full border-inverse border-l-2 border-r-2 text-inverse bg-primary p-4" />
+                </a>
+            </div>
         </div>
     </div>
 
 
     {{-- Mobile drawer backdrop --}}
-    <div x-show="mobileOpen" x-cloak @click="closeMobile()" class="fixed inset-0 z-40 bg-surface/30 lg:hidden"
+    <div x-show="mobileOpen" x-cloak @click="closeMobile()" class="fixed inset-0 z-40 bg-secondary/30 lg:hidden"
         aria-hidden="true" x-transition:enter="transition-opacity duration-200" x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity duration-200"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>

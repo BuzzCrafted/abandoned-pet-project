@@ -22,11 +22,23 @@ export default defineConfig({
       detectTls: 'abandonedpetproject.test',
     }),
 
-    wordpressPlugin(),
+    wordpressPlugin({
+      hmr: {
+        // Enable/disable HMR (default: true)
+        enabled: true,
+
+        // Pattern to match editor entry points (default: /editor/)
+        editorPattern: /editor/,
+
+        // Name of the editor iframe element (default: 'editor-canvas')
+        iframeName: "editor-canvas",
+      },
+    }),
 
     // Generate the theme.json file in the public/build/assets directory
     // based on the Tailwind config and the theme.json file from base theme folder
     wordpressThemeJson({
+      partials: ["resources/views/blocks", "resources/styles"],
       disableTailwindColors: false,
       disableTailwindFonts: false,
       disableTailwindFontSizes: false,

@@ -36,12 +36,13 @@
     <li class="{{ $liGroup }}">
         <a href="{{ $item->url }}" @if ($item->target) target="{{ $item->target }}" @endif
             @class([
-                'flex items-center uppercase text-sm font-semibold tracking-wide px-5 py-5 transition-colors hover:bg-primary focus:bg-primary focus:outline-none' => $isTopLevel,
-                'text-inverse' => $isTopLevel && !$item->active,
-                'text-primary hover:text-inverse uppercase' => $isTopLevel && $item->active,
-                'inline-flex w-full justify-between uppercase bg-inverse px-4 py-3 text-xs font-bold text-primary transition-colors hover:text-accent' =>
+                'flex items-center text-inverse! uppercase text-sm font-semibold tracking-wide px-5 py-5 transition-colors hover:bg-primary focus:bg-primary focus:outline-none' => $isTopLevel,
+                'text-inverse!' => $isTopLevel && !$item->active,
+                'text-primary! hover:text-inverse! uppercase' =>
+                    $isTopLevel && $item->active,
+                'inline-flex w-full justify-between uppercase bg-inverse px-4 py-3 text-xs font-bold text-primary! transition-colors hover:text-accent' =>
                     !$isTopLevel && !$item->active,
-                'inline-flex w-full px-4 py-3 text-xs uppercase font-bold bg-primary text-inverse' =>
+                'inline-flex w-full px-4 py-3 text-xs uppercase font-bold bg-primary text-inverse!' =>
                     !$isTopLevel && $item->active,
             ])>
             {{ $item->label }}
@@ -88,14 +89,15 @@
             <a href="{{ $item->url }}" @if ($item->target) target="{{ $item->target }}" @endif
                 @class([
                     'block px-4 py-3 font-semibold uppercase tracking-wide transition-colors hover:bg-primary' => true,
-                    'text-sm text-inverse hover:text-inverse' => $depth === 0 && !$item->active,
-                    'text-sm bg-primary text-inverse' => $depth === 0 && $item->active,
-                    'text-xs text-primary hover:text-inverse pl-6' =>
+                    'text-sm text-inverse! hover:text-inverse!' =>
+                        $depth === 0 && !$item->active,
+                    'text-sm bg-primary text-inverse!' => $depth === 0 && $item->active,
+                    'text-xs text-primary hover:text-inverse! pl-6' =>
                         $depth === 1 && !$item->active,
-                    'text-xs bg-primary text-inverse pl-6' => $depth === 1 && $item->active,
-                    'text-xs text-primary/80 hover:text-inverse pl-10' =>
+                    'text-xs bg-primary text-inverse! pl-6' => $depth === 1 && $item->active,
+                    'text-xs text-primary/80 hover:text-inverse! pl-10' =>
                         $depth > 1 && !$item->active,
-                    'text-xs bg-primary text-inverse pl-10' => $depth > 1 && $item->active,
+                    'text-xs bg-primary text-inverse! pl-10' => $depth > 1 && $item->active,
                 ])>
                 {{ $item->label }}
             </a>

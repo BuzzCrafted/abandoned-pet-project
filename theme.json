@@ -27,11 +27,25 @@
     },
     "spacing": {
       "padding": true,
-      "units": ["px", "%", "em", "rem", "vw", "vh"]
+      "margin": true,
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh"
+      ]
     },
     "typography": {
       "defaultFontSizes": false,
       "customFontSize": false
+    },
+    "border": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
     }
   }
 }

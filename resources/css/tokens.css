@@ -1,0 +1,83 @@
+@theme static {
+
+    /*
+    |--------------------------------------------------------------------------
+    | Primitive Color Palettes
+    |--------------------------------------------------------------------------
+    */
+
+    /* Powderblue (#a1d2d9) */
+    --color-powderblue-50: #f7fcfd;
+    --color-powderblue-100: #edf7f8;
+    --color-powderblue-200: #d8ecef;
+    --color-powderblue-300: #c0e0e5;
+    --color-powderblue-400: #add7dd;
+    --color-powderblue-500: #a1d2d9;
+    --color-powderblue-600: #87bcc4;
+    --color-powderblue-700: #6c9ea5;
+    --color-powderblue-800: #557d83;
+    --color-powderblue-900: #3e5c60;
+    --color-powderblue-950: #243537;
+
+    /* Steel (#3A4D5E) */
+    --color-steel-50: #f5f7f8;
+    --color-steel-100: #e9edf0;
+    --color-steel-200: #d1dbe1;
+    --color-steel-300: #afbec8;
+    --color-steel-400: #8195a4;
+    --color-steel-500: #5a7284;
+    --color-steel-600: #3a4d5e;
+    --color-steel-700: #31404f;
+    --color-steel-800: #283440;
+    --color-steel-900: #1c252e;
+    --color-steel-950: #0f1418;
+
+    /* Graphite (#58585a) */
+    --color-graphite-50: #fafafa;
+    --color-graphite-100: #f4f4f5;
+    --color-graphite-200: #e5e5e6;
+    --color-graphite-300: #d1d1d2;
+    --color-graphite-400: #ababac;
+    --color-graphite-500: #7a7a7c;
+    --color-graphite-600: #58585a;
+    --color-graphite-700: #454547;
+    --color-graphite-800: #313133;
+    --color-graphite-900: #1d1d1f;
+    --color-graphite-950: #0f0f10;
+
+
+    /* Coral (#ef3e33) */
+    --color-coral-50: #fff4f3;
+    --color-coral-100: #ffe7e5;
+    --color-coral-200: #ffcfc9;
+    --color-coral-300: #ffaea5;
+    --color-coral-400: #f97a6d;
+    --color-coral-500: #ef3e33;
+    --color-coral-600: #d62d23;
+    --color-coral-700: #b3231b;
+    --color-coral-800: #8c1c16;
+    --color-coral-900: #621411;
+    --color-coral-950: #380a09;
+
+    /*
+    Semantic aliases over Tailwind's built-in color scale.
+    To retheme: change the var() reference here — components never need touching.
+
+    bg-primary  text-primary  border-primary
+    bg-accent   text-accent   border-accent
+    bg-dark     text-dark
+    bg-soft     text-soft
+  */
+    --color-primary: var(--color-powderblue-500);
+    --color-secondary: var(--color-steel-600);
+    --color-surface: var(--color-graphite-600);
+    --color-accent: var(--color-coral-500);
+    --color-dark: var(--color-graphite-800);
+    --color-soft: var(--color-graphite-200);
+    --color-inverse: var(--color-white);
+
+    --font-main: "Montserrat";
+
+
+
+}
