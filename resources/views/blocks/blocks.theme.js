@@ -11,8 +11,10 @@ export default {
                 ":hover": {
                     "color": {
                         text: "var(--wp--preset--color--primary)",
+
                     }
                 },
+                css: "& { transition: background-color .3s ease, border-color .3s ease, color .3s ease; }",
                 variations: {
                     outline: {
                         border: {
@@ -21,11 +23,23 @@ export default {
                         },
                         color: {
                             background: "transparent",
-                            text: "var(--wp--preset--color--inverse)",
+                            text: "var(--wp--preset--color--secondary)",
+                        },
+                        ":hover": {
+                            "color": {
+                                background: "var(--wp--preset--color--secondary)",
+                                text: "var(--wp--preset--color--primary)",
+                            },
+                            border: {
+                                color: "var(--wp--preset--color--primary)",
+                            },
                         },
                     },
                 },
             },
+            "core/list": {
+                "css": "list-style-type: disc; list-style-position: outside;"
+            }
         },
     },
 };

@@ -3,8 +3,11 @@
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 3,
   "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
     "layout": {
-      "contentSize": "48rem"
+      "contentSize": "72rem",
+      "wideSize": "80rem"
     },
     "background": {
       "backgroundImage": true
@@ -35,7 +38,61 @@
         "rem",
         "vw",
         "vh"
-      ]
+      ],
+      "defaultSpacingSizes": false,
+      "spacingSizes": [
+        {
+          "slug": "xs",
+          "name": "XS",
+          "size": "clamp(0.5rem, 0.4rem + 0.2vw, 0.75rem)"
+        },
+        {
+          "slug": "s",
+          "name": "S",
+          "size": "clamp(0.75rem, 0.6rem + 0.4vw, 1rem)"
+        },
+        {
+          "slug": "m",
+          "name": "M",
+          "size": "clamp(1rem, 0.8rem + 0.8vw, 1.5rem)"
+        },
+        {
+          "slug": "l",
+          "name": "L",
+          "size": "clamp(1.5rem, 1rem + 1.5vw, 2rem)"
+        },
+        {
+          "slug": "xl",
+          "name": "XL",
+          "size": "clamp(2rem, 1.5rem + 2vw, 3rem)"
+        },
+        {
+          "slug": "2xl",
+          "name": "2XL",
+          "size": "clamp(2.5rem, 2rem + 3vw, 4rem)"
+        },
+        {
+          "slug": "3xl",
+          "name": "3XL",
+          "size": "clamp(3rem, 2.5rem + 4vw, 5rem)"
+        },
+        {
+          "slug": "4xl",
+          "name": "4XL",
+          "size": "clamp(4rem, 3rem + 5vw, 6rem)"
+        },
+        {
+          "slug": "5xl",
+          "name": "5XL",
+          "size": "clamp(5rem, 4rem + 6vw, 8rem)"
+        },
+        {
+          "slug": "6xl",
+          "name": "6XL",
+          "size": "clamp(6rem, 5rem + 8vw, 10rem)"
+        }
+      ],
+      "blockGap": true
     },
     "typography": {
       "defaultFontSizes": false,
@@ -46,6 +103,16 @@
       "radius": true,
       "style": true,
       "width": true
+    }
+  },
+  "styles": {
+    "spacing": {
+      "padding": {
+        "top": "1.25rem",
+        "right": "1.25rem",
+        "bottom": "1.25rem",
+        "left": "1.25rem"
+      }
     }
   }
 }

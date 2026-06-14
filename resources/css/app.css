@@ -1,6 +1,7 @@
 @import "tailwindcss" theme(static);
 @import './fonts.css';
 @import './tokens.css';
+@import './layout.css';
 @source "../../app/**/*.php";
 @source "../**/*.blade.php";
 @source "../**/*.js";
@@ -11,3 +12,26 @@
 
 /* Named groups are built dynamically in PHP — force Tailwind to include them */
 @source inline("group/{nav,sub,leaf} group-hover/{nav,sub,leaf}:block group-focus-within/{nav,sub,leaf}:block");
+
+.hero-cards {
+  .wp-block-group {
+    @apply max-w-full;
+  }
+}
+
+.tribe-events-wrapper {
+  --tec-color-accent-primary: var(--color-powderblue-500);
+  --tec-color-background-events-bar-submit-button: var(--color-powderblue-500);
+  --tec-color-button-primary: var(--color-powderblue-500);
+  --tec-color-button-primary-active: var(--color-powderblue-500);
+  --tec-color-link-accent: var(--color-powderblue-500);
+  --tec-color-link-accent-hover: var(--color-powderblue-700);
+  --tec-color-background-events-bar-submit-button-active: var(--color-powderblue-700);
+  --tec-color-background-events-bar-submit-button-hover: var(--color-powderblue-700);
+  --tec-color-category-legend-default-1: var(--color-powderblue-500);
+  --tec-color-category-legend-default-2: var(--color-powderblue-700);
+  --tec-color-category-legend-default-3: var(--color-powderblue-900);
+  --tec-color-category-legend-default-4: var(--color-powderblue-950);
+  --tec-color-category-legend-default-5: var(--color-steel-500);
+  --tec-font-family-sans-serif: var(--font-main);
+}

@@ -7,7 +7,7 @@
     @include('partials.entry-meta')
   </header>
 
-  <div class="e-content">
+  <div class="e-content entry-content wp-block-post-content is-layout-constrained has-global-padding">
     @php(the_content())
   </div>
 

@@ -67,15 +67,30 @@
     <li class="border-b border-white/10 last:border-0">
         @if ($hasChildren)
             <div x-data="{ open: false }">
-                <button type="button" @click="open = !open" :aria-expanded="open" @class([
-                    'flex w-full items-center justify-between px-4 py-3 text-left font-semibold uppercase tracking-wide transition-colors hover:bg-accent' => true,
-                    'text-sm text-inverse' => $depth === 0,
-                    'text-xs text-primary bg-inverse hover:text-accent pl-6' => $depth > 0,
-                ])>
-                    <span>{{ $item->label }}</span>
-                    <x-heroicon-s-chevron-down class='h-4 w-4 shrink-0 transition-transform duration-200'
-                        x-bind:class="{ 'rotate-180': open }" />
-                </button>
+                <div class="flex items-stretch">
+                    <a href="{{ $item->url }}" @if ($item->target) target="{{ $item->target }}" @endif
+                        @class([
+                            'flex flex-1 items-center px-4 py-3 font-semibold uppercase tracking-wide transition-colors hover:bg-primary' => true,
+                            'text-sm text-inverse! hover:text-inverse!' =>
+                                $depth === 0 && !$item->active,
+                            'text-sm bg-primary text-inverse!' => $depth === 0 && $item->active,
+                            'text-xs text-primary hover:text-inverse! pl-6' =>
+                                $depth > 0 && !$item->active,
+                            'text-xs bg-primary text-inverse! pl-6' => $depth > 0 && $item->active,
+                        ])>
+                        {{ $item->label }}
+                    </a>
+                    <button type="button" @click="open = !open" :aria-expanded="open"
+                        aria-label="{{ sprintf(__('Toggle %s submenu', 'abandoned-pet-project'), $item->label) }}"
+                        @class([
+                            'flex shrink-0 items-center justify-center px-3 py-3 transition-colors hover:bg-accent' => true,
+                            'text-inverse' => $depth === 0,
+                            'text-primary bg-inverse hover:text-accent' => $depth > 0,
+                        ])>
+                        <x-heroicon-s-chevron-down class='h-4 w-4 shrink-0 transition-transform duration-200'
+                            x-bind:class="{ 'rotate-180': open }" />
+                    </button>
+                </div>
                 <ul x-show="open" x-collapse @class([
                     'border-t border-soft/10 bg-inverse' => $depth === 0,
                     'border-t border-primary/20 bg-inverse/95' => $depth > 0,

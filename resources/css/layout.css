@@ -1,0 +1,13 @@
+/*
+ * Classic-theme layout helpers for theme.json content/wide/full alignments.
+ * WordPress outputs .is-layout-constrained rules globally, but classic themes
+ * must provide the constrained wrapper around the_content() themselves.
+ */
+.is-layout-constrained > .alignfull {
+  max-width: none;
+}
+
+.has-global-padding > .alignfull {
+  margin-left: calc(var(--wp--style--root--padding-left, 0px) * -1);
+  margin-right: calc(var(--wp--style--root--padding-right, 0px) * -1);
+}

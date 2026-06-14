@@ -62,13 +62,7 @@ return [
     */
 
     'block' => [
-        'apet/testimonial' => [
-            'title' => 'Testimonial',
-            'description' => 'A block for displaying customer testimonials.',
-            'category' => 'widgets',
-            'icon' => 'format-quote',
-            'keywords' => ['testimonial', 'quote', 'customer'],
-        ],
+
     ],
 
     /*
